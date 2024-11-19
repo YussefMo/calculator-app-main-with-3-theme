@@ -1,0 +1,330 @@
+/* main conf */
+*
+{
+    margin: 0;
+    padding: 0;
+    /* border: solid 1px; */
+}
+:root
+{
+    font-size: 16px;
+    --font-size-num: 32px;
+    --fw700: 700;
+}
+/* Theme 1*/
+.theme1 
+{
+    --main-background: hsl(222, 26%, 31%);
+    --toggle-keypad-background: hsl(223, 31%, 20%);
+    --toggle-slider: hsl(6, 63%, 50%);
+    --screen-background: hsl(224, 36%, 15%);
+    --key-del-cls-background: hsl(225, 21%, 49%);
+    --key-del-cls-shadow: hsl(224, 28%, 35%);
+    --key-eq-background: hsl(6, 63%, 50%);
+    --key-eq-shadow: hsl(6, 70%, 34%);
+    --key-background: hsl(30, 25%, 89%);
+    --key-shadow: hsl(28, 16%, 65%);
+    --text-key: hsl(221, 14%, 31%);
+    --text: hsl(0, 0%, 100%);
+    --del-cls-active: #a1b3e1;
+    --eq-active: #f96c5b;
+    --btn-active: #ffffff;
+}
+/* Theme 2 */
+.theme2 
+{
+    --main-background: hsl(0, 0%, 90%);
+    --toggle-keypad-background: hsl(0, 5%, 81%);
+    --toggle-slider: hsl(25, 98%, 40%);
+    --screen-background: hsl(0, 0%, 93%);
+    --key-del-cls-background: hsl(185, 42%, 37%);
+    --key-del-cls-shadow: hsl(185, 58%, 25%);
+    --key-eq-background: hsl(25, 98%, 40%);
+    --key-eq-shadow: hsl(25, 99%, 27%);
+    --key-background: hsl(45, 7%, 89%);
+    --key-shadow: hsl(35, 11%, 61%);
+    --text-key: hsl(60, 10%, 19%);
+    --text: hsl(0, 0%, 100%);
+    --del-cls-active: #62b5bd;
+    --eq-active: #ff8b38;
+    --btn-active: #ffffff;
+}
+/* Theme 3*/
+.theme3 
+{
+    --main-background: hsl(268, 75%, 9%);
+    --toggle-keypad-background: hsl(268, 71%, 12%);
+    --toggle-slider: hsl(176, 100%, 44%);
+    --screen-background: hsl(268, 71%, 12%);
+    --key-del-cls-background: hsl(281, 89%, 26%);
+    --key-del-cls-shadow: hsl(285, 91%, 52%);
+    --key-eq-background: hsl(176, 100%, 44%);
+    --key-eq-shadow: hsl(177, 92%, 70%);
+    --key-background: hsl(268, 47%, 21%);
+    --key-shadow: hsl(290, 70%, 36%);
+    --text-key: hsl(52, 100%, 62%);
+    --eq-theme3: hsl(198, 20%, 13%);
+    --text: hsl(0, 0%, 100%);
+    --del-cls-active: #8631b0;
+    --eq-active: #94fff9;
+    --btn-active: #6b34ac;
+}
+/* font family asign*/
+body 
+{
+    font-family: "League Spartan", serif;
+}
+/* container style */
+.container
+{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--main-background);
+}
+/* head style*/
+body.theme1 .head
+{
+    color: var(--text);
+}
+.head
+{
+    display: flex;
+    width: 30%;
+    align-items: center;
+    margin-bottom: 25px;
+    color: var(--text-key);
+}
+.head h1
+{
+    align-self: flex-start;
+    width: 75%;
+}
+.label 
+{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-right: 6%;
+}
+.togglecont 
+{
+    width: fit-content;
+}
+.num 
+{
+    margin-left: 13px;
+    transition: color 0.3s;
+}
+/* Toggle Button Styling */
+.toggle 
+{
+    position: relative;
+    background-color: var(--toggle-keypad-background);
+    width: 80px;
+    height: 20px;
+    border-radius: 20px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.slider 
+{
+    position: absolute;
+    background-color: var(--toggle-slider);
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    transition: all 0.3s;
+}
+/* Highlight active number*/
+body.theme1 .togglecont .num:nth-child(1) 
+{
+    color: black;
+}
+body.theme2 .togglecont .num:nth-child(2) 
+{
+    color: var(--key-eq-background);
+}
+body.theme3 .togglecont .num:nth-child(3) 
+{
+    color: var(--key-eq-background);
+}
+/* calc style */
+.calc-container 
+{
+    display: flex;
+    flex-flow: row wrap;
+    width: 30%;
+    font-weight: var(--fw700);
+    color: var(--text-key);
+}
+body.theme1 .result
+{
+    color: var(--text);
+}
+body.theme2 .result
+{
+    background-color: white;
+}
+.result
+{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 3.5rem;
+    width: 100%;
+    height: 100px;
+    border-radius: 10px;
+    background-color: var(--screen-background);
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+.keypad
+{
+    border-radius: 10px;
+    font-size: var(--font-size-num);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
+    gap: 20px;
+    width: 100%;
+    height: 450px;
+    background-color: var(--toggle-keypad-background);
+}
+.keypad .del
+{
+    box-shadow: 0px 3px 0px var(--key-del-cls-shadow);
+    background-color: var(--key-del-cls-background);
+    color: var(--text);
+}
+.keypad .cls
+{
+    box-shadow: 0px 3px 0px var(--key-del-cls-shadow);
+    background-color: var(--key-del-cls-background);
+    color: var(--text);
+    width: 45%;
+}
+body.theme3 .keypad .eq
+{
+    color: var(--eq-theme3);
+}
+.keypad .eq
+{
+    box-shadow: 0px 3px 0px var(--key-eq-shadow);
+    background-color: var(--key-eq-background);
+    color: var(--text);
+    width: 45%;
+}
+.btn
+{
+    box-shadow: 0px 3px 0px var(--key-shadow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    height: 60px;
+    border-radius: 10px;
+    background-color: var(--key-background);
+    color: var(--text-key);
+    cursor: pointer;
+}
+/* active btn style */
+.keypad .del.clicked:active
+{
+    background-color: var(--del-cls-active);
+}
+.keypad .cls.clicked:active
+{
+    background-color: var(--del-cls-active);
+}
+.keypad .eq.clicked:active
+{
+    background-color: var(--eq-active);
+}
+.btn.clicked:active
+{
+    background-color: var(--btn-active);
+}
+body.theme1 .attribution
+{
+    color: var(--text);
+}
+.attribution
+{
+    color: var(--text-key);
+    margin-top: 50px;
+    text-align: center;
+}
+body.theme1 .attribution a
+{
+    color: var(--text);
+}
+.attribution a
+{
+    color: var(--text-key);
+    margin-top: 50px;
+    text-align: center;
+}
+/* responsive desgin */
+@media (max-width: 1440px) 
+{
+    .head
+    {
+        width: 35%;
+    }
+    .calc-container 
+    {
+        width: 35%;
+    }
+}
+@media (max-width: 1024px) 
+{
+    .head
+    {
+        width: 45%;
+    }
+    .calc-container 
+    {
+        width: 45%;
+    }
+}
+@media (max-width: 785px) 
+{
+    .head
+    {
+        width: 60%;
+    }
+    .calc-container 
+    {
+        width: 60%;
+    }
+}
+@media (max-width: 480px) 
+{
+    .head
+    {
+        width: 90%;
+    }
+    .calc-container 
+    {
+        width: 90%;
+    }
+    .result
+    {
+        font-size: 2.5rem;
+    }
+    .keypad
+    {
+        gap: 15px;
+    }
+    .btn
+    {
+        height: 70px;
+    }
+}
